@@ -15,6 +15,8 @@ class Board:
         self.board = np.zeros([ROWS, COLUMNS])
         self.x = STARTX
         self.y = STARTY
+        self.startx = STARTX
+        self.starty = STARTY
         self.endx = ENDX
         self.endy = ENDY
         self.is_agent_reach = False
@@ -31,7 +33,7 @@ class Board:
         self.board[3][9] = -1
         self.board[3][10] = -1
 
-    def goTo(self, direction):
+    def move(self, direction):
         # North
         if direction == 'n':
             newx = self.x - 1
@@ -62,10 +64,12 @@ class Board:
     def reward(self):
         if self.board[(self.x, self.y)] == 0:
             return -1
+        if self.board[(self.x, self.y)] == 'E':
+            return +100
         else:
-            return -10
+            return -100
 
-    def print(self):
+    def render(self):
         for i in range(0, ROWS):
             for j in range(0, COLUMNS):
                 if self.board[i, j] == -1:
