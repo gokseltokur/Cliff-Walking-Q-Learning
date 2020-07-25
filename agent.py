@@ -66,9 +66,7 @@ class Agent:
 
                 sum_reward += sum_reward + self.board.reward()
 
-                if self.board.is_agent_reach:
-                    break
-                if self.board.is_agent_die:
+                if self.board.is_agent_die or self.board.is_agent_reach:
                     break
 
             reward = self.board.reward()
