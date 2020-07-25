@@ -77,23 +77,9 @@ class Board:
             return -1
         if self.board[pos] == 0:
             return -1
-        #if self.board[pos] == 'E':
-            #return +100
+        if self.board[pos] == 'E':
+            return +100
         return -100
-
-    def render(self):
-        for i in range(0, ROWS):
-            for j in range(0, COLUMNS):
-                if self.board[i, j] == -1:
-                    p = '-1'
-                if self.board[i, j] == 0:
-                    p = ' 0'
-                if i == self.x and j == self.y:
-                    p = ' S'
-                if i == self.endx and j == self.endy:
-                    p = ' E'
-                print(p, end='')
-            print()
 
 
 

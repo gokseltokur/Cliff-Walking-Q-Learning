@@ -4,7 +4,7 @@ import numpy as np
 
 EXPLORATION_RATE = 0.2
 LEARNING_RATE = 0.1
-NUMBER_OF_ROUNDS = 50
+NUMBER_OF_ROUNDS = 250
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
         action = agent.decide_action()
         states.append(current_state)
         
-        print("current position {} |action {}".format(current_state, action))
+        print("current position {} action {}".format(current_state, action))
 
 
         move_tuple = agent.board.move(action)
