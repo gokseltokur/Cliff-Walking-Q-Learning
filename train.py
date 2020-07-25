@@ -20,7 +20,8 @@ def main():
         action = agent.decide_action()
         states.append(current_state)
         
-        print("current position {} action {}".format(current_state, action))
+        print("POSITION: " + str(current_state), end=' ')
+        print("ACTION: " + str(action))
 
 
         move_tuple = agent.board.move(action)
