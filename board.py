@@ -65,7 +65,7 @@ class Board:
         # Corrapse
         if self.board[(self.x, self.y)] == -1:
             self.is_agent_die = True
-            #print("Agent died")
+            print("Agent died")
 
         return (self.x, self.y)
 

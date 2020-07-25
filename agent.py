@@ -49,6 +49,7 @@ class Agent:
     def train(self, rounds):
         for i in range(rounds):
             print('Round: ' + str(i))
+            sum_reward = 0
             while 1:
                 current_state = (self.x, self.y)
                 current_reward = self.board.reward()
@@ -62,11 +63,16 @@ class Agent:
                 self.y = self.board.y
 
                 self.states.append([current_state, action, current_reward])
+
+                sum_reward += sum_reward + self.board.reward()
+
                 if self.board.is_agent_reach:
+                    break
+                if self.board.is_agent_die:
                     break
 
             reward = self.board.reward()
-            print("REWARD ", reward)
+            print("REWARD ", sum_reward)
 
 
             for j in self.actions:

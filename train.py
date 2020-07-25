@@ -3,7 +3,7 @@ from agent import *
 import numpy as np
 
 EXPLORATION_RATE = 0.2
-LEARNING_RATE = 0.1
+LEARNING_RATE = 0.5
 NUMBER_OF_ROUNDS = 250
 
 
