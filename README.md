@@ -32,4 +32,7 @@ X -> Cliff<br />
 
 ## To Run
 You can directly run the __train.py__
-`python train.py` 
+`python train.py`
+
+## References
+Richard S. Sutton and Andrew G. Barto, Reinforcement Learning: An Introduction (pp. 131, 132).
