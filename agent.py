@@ -92,10 +92,12 @@ class Agent:
             for j in range(0, len(self.board.board[0])):
                 p = ' 0'
                 if self.board.board[i, j] == -1:
-                    p = ' *'
+                    p = ' X'
                 if (i, j) in states:
-                    p = ' R'
+                    p = ' #'
                 if i == self.board.endx and j == self.board.endy:
                     p = ' E'
+                if i == self.board.startx and j == self.board.starty:
+                    p = ' S'
                 print(p, end='')
             print()
