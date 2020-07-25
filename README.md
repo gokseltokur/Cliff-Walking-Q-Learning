@@ -5,7 +5,7 @@ This is a standard undiscounted, episodic task, with start and end state, and th
 
 ## Q-Learning
 Defined by,<br />
-![Q-Learning Formula](https://gokseltokur.com/rawimgs/q-learning.png)
+![Q-Learning Formula](https://gokseltokur.com/rawimgs/q-learning-goksel.png)
 
 ![Q-Learning Code](https://gokseltokur.com/rawimgs/q-learning2.png)
 
