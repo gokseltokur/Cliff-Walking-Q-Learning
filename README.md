@@ -10,7 +10,7 @@ Defined by,<br />
 ![Q-Learning Code](https://gokseltokur.com/rawimgs/q-learning2.png)
 
 ### Notation
-First Header  | Second Header
+Symbol  | Description
 ------------- | -------------
 Q  | Value
 S  | State
