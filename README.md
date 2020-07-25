@@ -17,7 +17,7 @@ S  | State
 A  | Action
 α  | Learning Rate
 r  | Reward
-γ  | Discount Factor
+γ  | Discount Factor (Learning Rate)
 t  | Represents the time e.g. (t+1) -> future / t -> old  
 
 ## Example output of the 250 rounds of training with exploration rate of 0.2 and learning rate of 0.5
