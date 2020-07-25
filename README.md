@@ -5,6 +5,12 @@ This is a standard undiscounted, episodic task, with start and end state, and th
 
 ## Example output of the 250 rounds of training with exploration rate of 0.2 and learning rate of 0.5
 
+S -> Start point<br />
+E -> End point (Goal)<br />
+0 -> Plain<br />
+X -> Cliff<br />
+``#`` -> Path that agent went<br />
+
 ![Cliff Walking Q-Learning Example Output](https://gokseltokur.com/output-of-walking.png)
 
 ## To Run
