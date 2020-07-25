@@ -5,5 +5,7 @@ This is a standard undiscounted, episodic task, with start and end state, and th
 
 Example output of the 250 rounds of training with exploration rate of 0.2 and learning rate of 0.5
 
+![Cliff Walking Q-Learning Example Output](https://gokseltokur.com/output-of-walking.png)
+
 
 
