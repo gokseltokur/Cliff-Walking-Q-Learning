@@ -5,9 +5,9 @@ This is a standard undiscounted, episodic task, with start and end state, and th
 
 ## Q-Learning
 Defined by,<br />
-![Q-Learning Formula](https://gokseltokur.com/rawimgs/q-learning-goksel.png)
+![Q-Learning Formula](http://gokseltokur.com/rawimgs/q-learning-goksel.png)
 
-![Q-Learning Code](https://gokseltokur.com/rawimgs/q-learning2.png)
+![Q-Learning Code](http://gokseltokur.com/rawimgs/q-learning2.png)
 
 ### Notation
 Symbol  | Description
@@ -28,7 +28,7 @@ E -> End point (Goal)<br />
 X -> Cliff<br />
 ``#`` -> Path that agent went<br />
 
-![Cliff Walking Q-Learning Example Output](https://gokseltokur.com/rawimgs/output-of-walking.png)
+![Cliff Walking Q-Learning Example Output](http://gokseltokur.com/rawimgs/output-of-walking.png)
 
 ## To Run
 You can directly run the __train.py__
