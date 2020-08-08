@@ -36,7 +36,7 @@ def main():
         if agent.board.is_agent_reach:
             break
 
-    
+    print(agent.state_actions)
 
 if __name__ == "__main__":
     main()

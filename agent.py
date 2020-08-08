@@ -1,5 +1,7 @@
 from board import *
 import numpy as np
+import queue
+q = queue.Queue(maxsize=20)
 
 class Agent:
     def __init__(self, exploration_rate, learning_rate):
@@ -47,7 +49,6 @@ class Agent:
         return action
 
     def train(self, rounds):
-        avg_number_of_steps = 0
         for i in range(rounds):
             number_of_steps = 0
             print('Round: ' + str(i))
@@ -65,8 +66,8 @@ class Agent:
                 self.x = self.board.x
                 self.y = self.board.y
                 
-                if i >= 980:
-                    number_of_steps += 1
+                
+                number_of_steps += 1
 
                 self.states.append([current_state, action, current_reward])
 
@@ -79,6 +80,14 @@ class Agent:
 
                 if self.board.is_agent_die or self.board.is_agent_reach:
                     break
+            
+            if(q.full()):
+                q.get()
+            print(number_of_steps)
+            q.put(int(number_of_steps))
+
+            print("QUEUE:", q.queue[0])
+            
 
             reward = self.board.reward()
             print("REWARD ", sum_reward)
@@ -96,10 +105,20 @@ class Agent:
                 self.state_actions[position][action] = round(reward, 3)
                 reward = np.max(list(self.state_actions[position].values()))
             
-            avg_number_of_steps += number_of_steps
+
+            if self.exploration_rate > 0.005:
+                self.exploration_rate -= 0.0001
+
+            
+            sum_of_queue = 0
+            if(q.full()):
+                for e in list(q.queue):
+                    sum_of_queue += e
+                if(sum_of_queue/20 < 15):
+                    break
+
             self.reset()
         print("Maximum Reward of the training of " + str(rounds) + " rounds :" + str(max_reward))
-        print("AVG NUMBER OF STEPS: " + str(avg_number_of_steps/1000))
 
     def render(self, states):
         for i in range(0, len(self.board.board)):
