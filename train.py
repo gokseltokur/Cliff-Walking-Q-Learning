@@ -4,7 +4,7 @@ import numpy as np
 
 EXPLORATION_RATE = 0.2
 LEARNING_RATE = 0.1
-NUMBER_OF_ROUNDS = 1000
+NUMBER_OF_ROUNDS = 100000
 
 
 def main():

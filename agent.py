@@ -114,7 +114,20 @@ class Agent:
             if(q.full()):
                 for e in list(q.queue):
                     sum_of_queue += e
-                if(sum_of_queue/20 < 15):
+
+                mean_of_queue = sum_of_queue / q.qsize()
+
+                sum_variance = 0
+                for e in list(q.queue):
+                    sum_variance += pow((e - mean_of_queue),2)
+                    
+                variance = sum_variance / (q.qsize() - 1)
+
+
+                print(q.queue)
+                print("MEAN:" , mean_of_queue)
+                print("VARIANCE:" , variance)
+                if(variance < 10):
                     break
 
             self.reset()
