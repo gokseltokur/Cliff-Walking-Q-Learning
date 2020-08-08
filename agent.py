@@ -47,9 +47,12 @@ class Agent:
         return action
 
     def train(self, rounds):
+        avg_number_of_steps = 0
         for i in range(rounds):
+            number_of_steps = 0
             print('Round: ' + str(i))
             sum_reward = 0
+            max_reward = -99999
             while 1:
                 current_state = (self.x, self.y)
                 current_reward = self.board.reward()
@@ -61,10 +64,18 @@ class Agent:
                 self.board.y = move_tuple[1]
                 self.x = self.board.x
                 self.y = self.board.y
+                
+                if i >= 980:
+                    number_of_steps += 1
 
                 self.states.append([current_state, action, current_reward])
 
+                # Calculate total reward of the round
                 sum_reward += sum_reward + self.board.reward()
+
+                # Get maximum of the rounds' reward
+                if sum_reward > max_reward:
+                    max_reward = sum_reward
 
                 if self.board.is_agent_die or self.board.is_agent_reach:
                     break
@@ -84,8 +95,11 @@ class Agent:
                 reward = current_value + self.learning_rate * (r + reward - current_value)
                 self.state_actions[position][action] = round(reward, 3)
                 reward = np.max(list(self.state_actions[position].values()))
-                
+            
+            avg_number_of_steps += number_of_steps
             self.reset()
+        print("Maximum Reward of the training of " + str(rounds) + " rounds :" + str(max_reward))
+        print("AVG NUMBER OF STEPS: " + str(avg_number_of_steps/1000))
 
     def render(self, states):
         for i in range(0, len(self.board.board)):

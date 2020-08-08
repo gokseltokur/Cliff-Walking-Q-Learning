@@ -1,9 +1,9 @@
 import numpy as np
 
-ROWS = 4
+ROWS = 9
 COLUMNS = 12
 
-STARTX = 3
+STARTX = 0
 STARTY = 0
 
 ENDX = 3
@@ -22,16 +22,16 @@ class Board:
         self.is_agent_reach = False
         self.is_agent_die = False
 
-        self.board[3][1] = -1
-        self.board[3][2] = -1
-        self.board[3][3] = -1
-        self.board[3][4] = -1
-        self.board[3][5] = -1
-        self.board[3][6] = -1
-        self.board[3][7] = -1
-        self.board[3][8] = -1
-        self.board[3][9] = -1
-        self.board[3][10] = -1
+        self.board[1][1] = -1
+        self.board[1][2] = -1
+        self.board[1][3] = -1
+        self.board[1][4] = -1
+        self.board[1][5] = -1
+        self.board[1][6] = -1
+        self.board[1][7] = -1
+        self.board[1][8] = -1
+        self.board[1][9] = -1
+        self.board[1][10] = -1
 
     def move(self, direction):
         newx = None

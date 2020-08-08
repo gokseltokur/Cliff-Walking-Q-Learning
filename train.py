@@ -3,8 +3,8 @@ from agent import *
 import numpy as np
 
 EXPLORATION_RATE = 0.2
-LEARNING_RATE = 0.5
-NUMBER_OF_ROUNDS = 250
+LEARNING_RATE = 0.1
+NUMBER_OF_ROUNDS = 1000
 
 
 def main():
@@ -29,9 +29,12 @@ def main():
         agent.board.y = move_tuple[1]
         agent.x = agent.board.x
         agent.y = agent.board.y
+
+        
+        agent.render(states)
+
         if agent.board.is_agent_reach:
             break
-    agent.render(states)
 
     
 
